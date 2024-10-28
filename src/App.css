@@ -1,11 +1,12 @@
-.home-container {
+.container {
     display: flex;
 }
 
-.left-side {
+.left-container {
     width: 20%;
+    
 }
 
-.right-side {
+.right-container {
     width: 80%;
 }

@@ -5,18 +5,17 @@ import user2 from "../../../assets/images/user2.jpg";
 import user3 from "../../../assets/images/user3.jpg";
 import user4 from "../../../assets/images/user4.jpg";
 import "../../../styles/home.css";
-import "../../../App.css";
 
 // Home component, the main content container for the homepage
 function Home() {
   return (
-    <div className="home-container">
-      <div className="left-side">
+    <div className="container">
+      <div className="left-container">
         <Sidebar />
       </div>
 
       {/* Right side - main content area */}
-      <div className="right-side">
+      <div className="right-container">
         <div >
           {/* Welcome message */}
           <h1>Welcome to SkillStream</h1>

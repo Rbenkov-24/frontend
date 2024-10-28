@@ -1,0 +1,53 @@
+@import '../App.css';
+
+.right-container {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.flex-container {
+    display: flex; 
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.content-box {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 60%; 
+    
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 35%;
+    margin-left: 20px;
+}
+
+.stat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contributors {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    background-color: #8e7c7c1a;
+}
+
+.contributor {
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+}
+
+.contributor img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+}
