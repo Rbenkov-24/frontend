@@ -1,0 +1,11 @@
+.home-container {
+    display: flex;
+}
+
+.left-side {
+    width: 20%;
+}
+
+.right-side {
+    width: 80%;
+}

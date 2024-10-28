@@ -1,0 +1,65 @@
+/* Hero image styling */
+.hero-image {
+  width: 100%;
+  border-bottom: 3px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Popular Topics styling */
+.popular-topics {
+  margin-top: 20px;
+  padding: 20px;
+  position: relative; 
+}
+
+.topics-container {
+  display: flex;
+}
+
+.topic-box {
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 2px 4px #0000001a;
+  min-width: 150px; 
+}
+
+/* Reviews Section */
+.reviews-section {
+  margin-top: 30px;
+  padding: 20px; 
+}
+
+.reviews-container {
+  display: flex;
+  gap: 15px; 
+  margin-right: 20px; 
+  justify-content: space-between;
+}
+
+.review-box {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0000001a;
+  text-align: center;
+  width: 200px; 
+  margin-right: 10px; 
+  flex-shrink: 0;
+}
+
+.reviewer-pic {
+  width: 40px; 
+  height: 40px;
+  border-radius: 50%; 
+  margin-top: 10px;
+}

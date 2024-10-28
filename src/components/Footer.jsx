@@ -1,6 +1,7 @@
 function Footer() {
   return (
     <footer className="footer">
+      {/* Contact Information Section */}
       <div>
         <div>
           <h4>Contact Us</h4>
@@ -16,6 +17,7 @@ function Footer() {
           </div>
         </div>
 
+        {/* Social Media Links Section */}
         <div>
           <h4>Follow Us</h4>
           <a href="#">Facebook</a>
@@ -24,6 +26,7 @@ function Footer() {
           <a href="#">LinkedIn</a>
         </div>
 
+        {/* Quick Links Section */}
         <div>
           <h4>Quick Links</h4>
           <a href="/privacy">Privacy Policy</a>
@@ -32,6 +35,7 @@ function Footer() {
         </div>
       </div>
 
+      {/* Footer Copyright Section */}
       <div>
         <div>
           <p>© 2024 SkillStream, INC.</p>
