@@ -23,7 +23,7 @@ function Sidebar() {
       </NavLink>
 
       
-      <NavLink to="/Admin" className={({ isActive }) => (isActive ? 'active-link' : '')}>
+      <NavLink to="/login" className={({ isActive }) => (isActive ? 'active-link' : '')}>
         Admin Hub
       </NavLink>
     </nav>
