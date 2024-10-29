@@ -2,8 +2,8 @@ function Footer() {
   return (
     <footer className="footer">
       {/* Contact Information Section */}
-      <div>
-        <div>
+      <div className="footer-content">
+        <div className="contact-info">
           <h4>Contact Us</h4>
           <p>
             Email: <span>info@skillstream.com</span>
@@ -11,7 +11,7 @@ function Footer() {
           <div>
             <h4>Subscribe to our newsletter</h4>
             <form>
-              <input type="email" placeholder="Your email" required />
+              <input type="email" name="email" id="newsletter-email" placeholder="Your email" required autoComplete="email" />
               <button type="submit">Subscribe</button>
             </form>
           </div>
