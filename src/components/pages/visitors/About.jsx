@@ -5,6 +5,7 @@ import "../../../styles/about.css";
 const About = () => {
   // State to hold the list of contributors
   const [contributors, setContributors] = useState([]);
+  const [error, setError] = useState(null); // State for error handling
 
   // Effect to fetch contributors from the API when the component mounts
   useEffect(() => {
@@ -26,6 +27,7 @@ const About = () => {
       } catch (error) {
         // Log any errors that occur during the fetch
         console.error("Error fetching contributors:", error);
+        setError("Failed to load contributors. Please try again later.");
       }
     };
 
@@ -39,6 +41,7 @@ const About = () => {
         <Sidebar /> {/* Render the Sidebar component */}
       </div>
       <div className="right-container">
+        {error && <p className="error-message">{error}</p>} {/* Display error message if there's an error */}
         <div className="flex-container">
           <div className="content-box">
             <h4>How It Started</h4>
@@ -61,8 +64,7 @@ const About = () => {
           {contributors.length > 0
             ? contributors.map((contributor) => (
                 <div key={contributor._id} className="contributor">
-                  <img src={contributor.picture} alt={contributor.name} />{" "}
-                  {/* Display picture */}
+                  <img src={contributor.picture} alt={contributor.name} /> {/* Display picture */}
                   <h5>{contributor.name}</h5> {/* Display name */}
                   <p>{contributor.jobTitle}</p> {/* Display job title */}
                 </div>
