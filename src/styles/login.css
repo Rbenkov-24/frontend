@@ -1,0 +1,72 @@
+/* Container for the login card with styling for layout, shadow, and rounded corners */
+.login-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px #0000001a;
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+/* Styling for the login card title text */
+.login-card h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Form container within the login card, using a column layout with gaps between elements */
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input fields within the login card, including padding, border styling, and transition for focus effects */
+.login-card input {
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Styling for input fields when focused, changing the border color */
+.login-card input:focus {
+  outline: none;
+  border-color: #FFA500;
+}
+
+/* Submit button within the login card, with padding, background color, and hover effect */
+.login-card button[type="submit"] {
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FFA500;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling for the submit button on hover, changing the background color */
+.login-card button[type="submit"]:hover {
+  background-color: #c5840b;
+}
+
+/* Container for the login header text with center alignment */
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Icon within the login header with specific dimensions and color adjustment using filters */
+.login-icon {
+  width: 80px; 
+  height: 80px; 
+  object-fit: contain;
+  filter: invert(65%) sepia(54%) saturate(1432%) hue-rotate(360deg) brightness(103%) contrast(106%);
+}
