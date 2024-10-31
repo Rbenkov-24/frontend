@@ -1,5 +1,5 @@
 import Sidebar from "./Sidebar";
-import heroImage from "../../../assets/images/heroImage.png";
+import heroImage from '/src/assets/images/heroImage.png';
 import user1 from "../../../assets/images/user1.jpg";
 import user2 from "../../../assets/images/user2.jpg";
 import user3 from "../../../assets/images/user3.jpg";
