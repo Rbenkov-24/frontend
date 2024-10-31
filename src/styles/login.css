@@ -1,6 +1,6 @@
-/* Container for the login card with styling for layout, shadow, and rounded corners */
+/* Styling for the main login card, including background and layout */
 .login-card {
-  background-color: white;
+  background-color: #ffffff; 
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 5px 15px #0000001a;
@@ -9,64 +9,65 @@
   margin: 50px auto;
 }
 
-/* Styling for the login card title text */
+/* Heading styling within the login card */
 .login-card h2 {
   font-size: 28px;
-  color: #2c3e50;
+  color: #2c3e50; 
   margin-bottom: 30px;
   text-align: center;
 }
 
-/* Form container within the login card, using a column layout with gaps between elements */
+/* Form layout within the login card, controlling direction and spacing */
 .login-card form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* Input fields within the login card, including padding, border styling, and transition for focus effects */
+/* Input field styling for the login form */
 .login-card input {
   padding: 15px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  border: 2px solid #e0e0e0; 
+  border-radius: 15px;
   font-size: 16px;
   transition: border-color 0.3s ease;
 }
 
-/* Styling for input fields when focused, changing the border color */
+/* Focus state styling for input fields; Blue border on focus */
 .login-card input:focus {
   outline: none;
-  border-color: #FFA500;
+  border-color: #4a90e2;
 }
 
-/* Submit button within the login card, with padding, background color, and hover effect */
+/* Submit button styling within the login card */
 .login-card button[type="submit"] {
   padding: 15px;
   border: none;
-  border-radius: 8px;
-  background-color: #FFA500;
-  color: white;
+  border-radius: 15px;
+  background-color: #4a90e2;
+  color: #ffffff; 
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Styling for the submit button on hover, changing the background color */
+/* Hover effect for the submit button */
 .login-card button[type="submit"]:hover {
-  background-color: #c5840b;
+  background-color: #357abd; 
 }
 
-/* Container for the login header text with center alignment */
+/* Styling for the header section of the login card */
 .login-header {
   text-align: center;
   margin-bottom: 30px;
 }
 
-/* Icon within the login header with specific dimensions and color adjustment using filters */
+/* Icon styling within the login header */
 .login-icon {
   width: 80px; 
   height: 80px; 
   object-fit: contain;
-  filter: invert(65%) sepia(54%) saturate(1432%) hue-rotate(360deg) brightness(103%) contrast(106%);
+  /*This filter creates a vivid, vintage effect by adjusting colors, saturation, and brightness.*/
+  filter: invert(61%) sepia(82%) saturate(4429%) hue-rotate(199deg) brightness(98%) contrast(101%);
 }

@@ -1,87 +1,58 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import AdminHeader from "./AdminHeader";
+import { useState } from "react";
 import AdminSidebar from "./AdminSidebar";
 import "../../../styles/adminDashboard.css";
 
-// Main AdminDashboard component
+// Main AdminDashboard component to display admin-specific stats and recent activity
 function AdminDashboard() {
-  // Initialize navigation function for redirecting users
-  const navigate = useNavigate();
-
-  // Set up state for dashboard statistics (like total students and courses)
-  const [dashboardStats, setDashboardStats] = useState({
-    totalStudents: 0,
-    totalCourses: 0,
-    activeUsers: 0,
-    recentActivity: [],
+  // Set up state with static dashboard statistics
+  // These stats include total students, total courses, active users, and a recent activity log
+  const [dashboardStats] = useState({
+    totalStudents: 1500,
+    totalCourses: 50,
+    activeUsers: 750,
+    recentActivity: [
+      { description: "New course 'Advanced React' added", timestamp: "2024-10-15 14:30" },
+      { description: "Student Kevin completed 'JavaScript Basics'", timestamp: "2024-09-14 09:45" },
+      { description: "New user Sarah Smith registered", timestamp: "2024-09-13 11:20" },
+      { description: "Course 'Python for Beginners' updated", timestamp: "2024-05-12 16:00" },
+    ],
   });
 
-  // Fetch dashboard data when the component loads
-  useEffect(() => {
-    fetchDashboardStats();
-  }, []);
-
-  // Fetch data from the server and update dashboard stats
-  const fetchDashboardStats = async () => {
-    try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_BASE_URL}/api/admin/dashboard-stats`
-      );
-      const data = await response.json();
-      setDashboardStats(data);  // Update stats with data from the server
-    } catch (error) {
-      console.error("Error fetching dashboard stats:", error);
-    }
-  };
-
-  // Handle logout: clear token and navigate to login page
-  const handleLogout = () => {
-    localStorage.removeItem("adminToken");
-    navigate("/login");
-  };
-
-  // Render the AdminDashboard layout 
+  // Render the AdminDashboard layout, with a sidebar and main content area
   return (
     <div className="app-container">
-      {/* Sidebar component for admin navigation */}
-      <div className="left-container">
-        <AdminSidebar />
-      </div>
-      
-      {/* Main content section*/}
-      <div className="right-container">
-        <AdminHeader onLogout={handleLogout} />
-        <div className="dashboard-content">
-          <h1 className="dashboard-title">Dashboard Overview</h1>
+      {/* Render sidebar for admin navigation */}
+      <AdminSidebar />
+      <div className="page-content">
+        <h1 className="dashboard-title">Dashboard Overview</h1>
 
-          {/* Display cards for different statistics */}
-          <div className="stats-grid">
-            <div className="stat-card">
-              <h3>Total Students</h3>
-              <p>{dashboardStats.totalStudents}</p>
-            </div>
-            <div className="stat-card">
-              <h3>Total Courses</h3>
-              <p>{dashboardStats.totalCourses}</p>
-            </div>
-            <div className="stat-card">
-              <h3>Active Users</h3>
-              <p>{dashboardStats.activeUsers}</p>
-            </div>
+        {/* Display grid of cards for each main statistic */}
+        <div className="stats-grid">
+          <div className="stat-card">
+            <h3>Total Students</h3>
+            <p>{dashboardStats.totalStudents}</p>
           </div>
+          <div className="stat-card">
+            <h3>Total Courses</h3>
+            <p>{dashboardStats.totalCourses}</p>
+          </div>
+          <div className="stat-card">
+            <h3>Active Users</h3>
+            <p>{dashboardStats.activeUsers}</p>
+          </div>
+        </div>
 
-          {/* Display recent activity list */}
-          <div className="recent-activity">
-            <h2>Recent Activity</h2>
-            <div className="activity-list">
-              {dashboardStats.recentActivity.map((activity, index) => (
-                <div key={index} className="activity-item">
-                  <p>{activity.description}</p>
-                  <span className="activity-time">{activity.timestamp}</span>
-                </div>
-              ))}
-            </div>
+        {/* Section to display a list of recent activity logs */}
+        <div className="recent-activity">
+          <h2>Recent Activity</h2>
+          <div className="activity-list">
+            {dashboardStats.recentActivity.map((activity, index) => (
+              // Each activity item shows a description and timestamp of the event
+              <div key={index} className="activity-item">
+                <p>{activity.description}</p>
+                <span className="activity-time">{activity.timestamp}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

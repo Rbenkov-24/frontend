@@ -1,8 +1,171 @@
+/* Footer container with a semi-transparent background and positioned at the bottom of the page */
 footer {
-    background-color: #2c3e50; 
-    color: white; 
-    padding: 40px 20px; 
-    border-top: 3px solid #2980b9; 
-    width: 100%; 
-    position: relative;
+  background-color: rgba(201, 97, 6, 0.172);
+  color: white;
+  padding: 20px 0 10px;
+  margin-top: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+  position: relative; 
+  z-index: 1000; /* To ensure footer is above other elements */
+}
+
+/* Content area within the footer, flex layout for distributing sections evenly */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; 
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px; 
+  padding: 0 20px;
+}
+
+/* Individual section within the footer, allows for a flexible layout */
+.footer-section {
+  flex: 1;
+  min-width: 200px; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+/* Header style for section titles within the footer, includes a decorative line */
+.footer-section h4 {
+  color: white;
+  font-size: 18px; 
+  margin-bottom: 10px; 
+  position: relative;
+}
+
+/* Decorative underline effect for section headers */
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; 
+  left: 0;
+  width: 40px; 
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Paragraph styling for text within footer sections, maintaining readability */
+.footer-section p {
+  font-size: 14px; 
+  line-height: 1.4; 
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0; 
+}
+
+/* Emphasized text within sections, such as labels or highlighted information */
+.footer-section span {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
+}
+
+/* Styles for quick links and social media links, including hover effects */
+.quick-links a,
+.social-media a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 4px 0; 
+  display: block;
+  font-size: 14px; 
+}
+
+/* Hover effects for quick links and social media links */
+.quick-links a:hover,
+.social-media a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+/* Newsletter form container, using flex layout for input and button alignment */
+.newsletter form {
+  display: flex;
+  gap: 10px;
+}
+
+/* Input field style for the newsletter signup, ensuring consistency in appearance */
+.newsletter input {
+  flex: 1;
+  padding: 8px; 
+  border-radius: 15px;
+  border: none;
+  font-size: 14px; 
+  color: #2c3e50;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Focus state for the input field to enhance user experience */
+.newsletter input:focus {
+  outline: none;
+  background-color: white;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Button style for the newsletter signup, with hover effects for interaction */
+.newsletter button {
+  padding: 8px 15px; 
+  background-color: white;
+  color: #4169E1;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px; 
+  font-weight: 600;
+}
+
+/* Hover effects for the newsletter button */
+.newsletter button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Bottom section of the footer, typically for copyright or additional info */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 15px auto 0; 
+  padding: 10px 20px; 
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+/* Paragraph styling for text in the footer bottom section, maintaining subtlety */
+.footer-bottom p {
+  font-size: 12px; 
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center text for better readability */
+  }
+
+  .footer-section {
+    width: 100%; /* Allow sections to take full width */
+    align-items: center; /* Center align items within each section */
+  }
+
+  .footer-section h4::after {
+    left: 50%; /* Center the underline effect */
+    transform: translateX(-50%);
+  }
+
+  .newsletter form {
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: center; /* Center align form items */
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 100%; /* Ensure full-width for input and button on small screens */
+  }
 }

@@ -1,0 +1,80 @@
+/* Styles for individual video items displayed on the page */
+.video-item {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 30px; 
+}
+
+/* Effect for video item on hover to create a lifting animation */
+.video-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Styles for video item titles */
+.video-item h3 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Wrapper for positioning the video with aspect ratio */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  margin-bottom: 15px;
+}
+
+/* Styles for embedding video iframes within the video wrapper */
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* Styles for video description text */
+.video-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Wrapper for search functionality */
+.search-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+/* Common styles for loading and error messages */
+.loading-message,
+.error-message {
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  font-size: 18px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles specifically for error messages to distinguish them */
+.error-message {
+  color: #dc3545;
+}
+
+/* Styles for the title of the courses section */
+.courses-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #2c3e50;
+}

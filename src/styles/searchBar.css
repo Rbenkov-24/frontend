@@ -1,0 +1,63 @@
+/* Search bar container styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid #e0e0e0;
+  background-color: #f8f8f8;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 2px 5px #0000001a;
+  transition: all 0.3s ease;
+}
+
+/* Styling for the search bar when it is focused */
+.search-bar:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px #007bff40;
+}
+
+/* Input field styling within the search bar */
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Outline styling for the input when focused */
+.search-input:focus {
+  outline: none;
+}
+
+/* Placeholder text color for the input field */
+.search-input::placeholder {
+  color: #999;
+}
+
+/* Search button styling */
+.search-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover state for the search button */
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Active state styling for the search button */
+.search-button:active {
+  transform: scale(0.98);
+}

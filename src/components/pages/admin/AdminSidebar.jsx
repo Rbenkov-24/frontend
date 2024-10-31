@@ -1,20 +1,34 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import '../../../styles/sidebar.css';
 
-// Main AdminSidebar component
+// AdminSidebar component, which serves as the navigation menu for admin pages.
+// Provides links to key sections and includes a logout function to end the session.
 function AdminSidebar() {
-  // Initialize navigation function for redirecting users
   const navigate = useNavigate();
 
-  // Function to handle logout: redirects to the login page
-  const handleLogout = () => {
-    navigate('/login'); // Redirect to login page after logout
+  const handleLogout = async () => {
+    try {
+      // Send a POST request to the logout endpoint to end the user session
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/logout`, {
+        method: 'POST',
+        credentials: 'include' // Sends cookies with the request to ensure session clearing
+      });
+      
+      // If logout is successful, navigate to the login page
+      if (response.ok) {
+        navigate('/login');
+      } else {
+        console.error('Logout failed'); // Log an error if the server response isn't successful
+      }
+    } catch (error) {
+      console.error('Error during logout:', error); // Log any errors that occur during logout
+    }
   };
 
-  // Render the sidebar navigation links
   return (
+    // Main container for the sidebar navigation with links and a logout button
     <nav className="sidebar">
-      {/* Links highlighting when active */}
+      {/* Links to admin sections, adding 'active-link' class to highlight active page */}
       <NavLink 
         to="/admin/dashboard" 
         className={({ isActive }) => isActive ? 'active-link' : ''}
@@ -23,13 +37,13 @@ function AdminSidebar() {
       </NavLink>
 
       <NavLink 
-        to="/admin/userManagement" 
+        to="/admin/workSpace" 
         className={({ isActive }) => isActive ? 'active-link' : ''}
       >
-        User Management
+        Work Space
       </NavLink>
 
-      {/* Logout button to trigger handleLogout */}
+      {/* Logout button - triggers handleLogout to log the user out and redirect to login */}
       <button 
         onClick={handleLogout}
         className="logout-button"
@@ -40,4 +54,5 @@ function AdminSidebar() {
   );
 }
 
+// Exporting AdminSidebar component to be used in other parts of the application, 
 export default AdminSidebar;

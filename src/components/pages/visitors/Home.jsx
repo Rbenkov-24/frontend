@@ -1,5 +1,5 @@
-import Sidebar from "../visitors/Sidebar";
-import heroImage from "../../../assets/images/HeroImage.png";
+import Sidebar from "./Sidebar";
+import heroImage from "../../../assets/images/heroImage.png";
 import user1 from "../../../assets/images/user1.jpg";
 import user2 from "../../../assets/images/user2.jpg";
 import user3 from "../../../assets/images/user3.jpg";
@@ -9,91 +9,90 @@ import "../../../styles/home.css";
 // Home component, the main content container for the homepage
 function Home() {
   return (
-    <div className="container">
-      <div className="left-container">
+    <div className="app-container">
         <Sidebar />
-      </div>
 
       {/* Right side - main content area */}
-      <div className="right-container">
-        <div >
-          {/* Welcome message */}
-          <h1>Welcome to SkillStream</h1>
-          <p>Your journey to global learning transformation starts here!</p>
+        <div className="page-content">
+          <h1 className="welcome-title">Welcome to SkillStream</h1>
+          <p className="welcome-subtitle">
+            Your journey to global learning transformation starts here!
+          </p>
 
           {/* Hero Image Section, displays a main image */}
           <div className="hero-image">
-            <img src={heroImage} alt="Hero" className="hero-img" />
+            <img src={heroImage} alt="Transform Your Learning Journey" />
           </div>
 
-          {/* Popular Topics Section */}
+          {/* Popular Topics Section - Display grid of popular learning topics */}
           <div className="popular-topics">
-            <h2>Popular Topics</h2>
-
-            {/* Topic categories */}
-            <div className="topics-container">
-              <div className="topic-box">Math</div>
-              <div className="topic-box">Music</div>
-              <div className="topic-box">Data Science</div>
-              <div className="topic-box">React</div>
-              <div className="topic-box">AI</div>
-              <div className="topic-box">C Sharp</div>
-              <div className="topic-box">JS</div>
-              <div className="topic-box">Science</div>
-              <div className="topic-box">Python</div>
-              <div className="topic-box">Design</div>
-              <div className="topic-box">HTML</div>
-              <div className="topic-box">CSS</div>
+            <h2 className="section-title">Popular Topics</h2>
+            <div className="topics-grid">
+              {[
+                "Math",
+                "Music",
+                "Data Science",
+                "React",
+                "AI",
+                "C Sharp",
+                "JS",
+                "Science",
+                "Python",
+                "Design",
+                "HTML",
+                "CSS",
+              ].map((topic, index) => (
+                <div key={index} className="topic-card">
+                  <h3>{topic}</h3>{/* Topic name */}
+                  <p>Explore {topic}</p>{/* Short description encouraging users to explore */}
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Reviews Section */}
-          <div className="reviews-section">
-            <h2>See What Others Achieving Through Learning With Us</h2>
-
-            {/* User reviews showcasing feedback from other learners */}
-            <div className="reviews-container">
-              <div className="review-box">
-                <p>"This platform changed my life!"</p>
+        {/* Reviews Section - Display testimonials from learners */}
+        <div className="reviews-section">
+          <h2 className="section-title">
+            See What Others Are Achieving Through Learning With Us
+          </h2> {/* Reviews section title */}
+          <div className="reviews-grid">
+            {[
+              {
+                name: "Nina",
+                role: "Student",
+                image: user1,
+                text: `“This platform changed my life! I went from zero to hero”`,
+              },
+              {
+                name: "Mike",
+                role: "Developer",
+                image: user2,
+                text: `“I learned so much in a short time. Thank you SkillStream”`,
+              },
+              {
+                name: "Luna",
+                role: "Software Engineer",
+                image: user3,
+                text: `“Fantastic experience with excellent content. I love it”`,
+              },
+              {
+                name: "Heather",
+                role: "JS Developer",
+                image: user4,
+                text: `“Highly recommend for anyone wanting to learn!”`,
+              },
+            ].map((review, index) => (
+              <div key={index} className="review-card">
+                <p className="review-text">{review.text}</p> {/* Review text */}
                 <img
-                  src={user1}
-                  alt="profile picture"
-                  className="reviewer-pic"
-                />
-                <h5>Nina</h5>
-                <p>Student</p>
+                  src={review.image}
+                  alt={review.name}
+                  className="reviewer-img"
+                /> {/* Reviewer profile image */}
+                <h4 className="reviewer-name">{review.name}</h4> {/* Reviewer name */}
+                <p className="reviewer-role">{review.role}</p> {/* Reviewer's role or occupation */}
               </div>
-              <div className="review-box">
-                <p>"I learned so much in a short time."</p>
-                <img
-                  src={user2}
-                  alt="profile picture"
-                  className="reviewer-pic"
-                />
-                <h5>Mike</h5>
-                <p>Developer</p>
-              </div>
-              <div className="review-box">
-                <p>"Fantastic experience with excellent content."</p>
-                <img
-                  src={user3}
-                  alt="profile picture"
-                  className="reviewer-pic"
-                />
-                <h5>Luna</h5>
-                <p>Software Engineer</p>
-              </div>
-              <div className="review-box">
-                <p>"Highly recommend for anyone wanting to learn!"</p>
-                <img
-                  src={user4}
-                  alt="profile picture"
-                  className="reviewer-pic"
-                />
-                <h5>Heather</h5>
-                <p>JS Developer</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -101,5 +100,5 @@ function Home() {
   );
 }
 
-// Exporting Home component to be used in other parts of the application
+// Exporting Home component for usage in other parts of the application
 export default Home;

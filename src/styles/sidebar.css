@@ -1,30 +1,90 @@
-.sidebar { /* Main container for the sidebar */
-    background-color: #f8f8f8;
-    padding: 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    overflow-y: auto;
+/* Sidebar container styling */
+.sidebar {
+  position: fixed;
+  top: 180px;
+  left: 20px;
+  width: calc(20% - 40px);
+  height: calc(100vh - 260px); /* to leave space for footer */
+  overflow-y: auto;
+  padding-right: 15px;
+  padding-bottom: 40px; 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: calc(100vh - 260px); 
 }
 
-.sidebar a { /* Styles for links in the sidebar */
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-    margin: 5px 0;
-    border-radius: 5px;
-    display: inline-block;
+/* Anchor link styling within the sidebar */
+.sidebar a {
+  display: block;
+  padding: 20px 25px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background-color: #ffffff26;
+  box-shadow: 0 5px 15px #0000001a;
+  margin-left: 18px;
 }
 
-.active-link { /* Styles for active links */
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+/* First anchor link margin adjustment */
+.sidebar a:first-child {
+  margin-top: 20px; 
+}
+
+/* Hover state for anchor links */
+.sidebar a:hover {
+  background-color: #ffffff40;
+  transform: translateX(5px);
+}
+
+/* Active link styling */
+/*!important ensures these styles are applied consistently, overriding other conflicting styles.*/
+.active-link {
+  background-color: #ffffff4d !important;
+  box-shadow: 0 5px 15px #00000026 !important;
+  font-weight: 700 !important;
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+} 
+
+/* Scrollbar thumb styling */
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #4a90e2;
+  border-radius: 10px;
+}
+
+/* Scrollbar track styling */
+.sidebar::-webkit-scrollbar-track {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+/* Logout button styling */
+.logout-button {
+  width: calc(100% - 18px); /* Match the width of anchor links */
+  display: block;
+  padding: 20px 25px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background-color: #ffffff26;
+  box-shadow: 0 5px 15px #0000001a;
+  margin-left: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover state for logout button */
+.logout-button:hover {
+  background-color: #ffffff40;
+  transform: translateX(5px);
 }

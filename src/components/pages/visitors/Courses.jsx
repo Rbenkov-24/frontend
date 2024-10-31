@@ -39,36 +39,42 @@ function Courses() {
   };
 
   return (
-    <div className="container">
-      <div className="left-container">
-        <Sidebar /> {/* Sidebar component for navigation */}
-      </div>
-      <div className="right-container">
-        <h2>Courses</h2>
-        <SearchBar onSearch={handleSearch} /> {/* Search bar to input search keyword */}
+    <div className="app-container">
+      <Sidebar /> {/* Render Sidebar component for navigation */}
+      <div className="page-content">
+        <h2 className="courses-title">Explore Our Educational Videos</h2> {/* Page title */}
+        
+        <div className="search-wrapper">
+          <SearchBar onSearch={handleSearch} /> {/* Render SearchBar and pass handleSearch function */}
+        </div>
+        
+        {/* Conditional rendering based on loading state and videos data */}
         {loading ? (
-          <p>Loading videos...</p> // Loading message while fetching
+          <p className="text-center">Loading videos...</p> // Show loading text while data is being fetched
         ) : videos.length > 0 ? (
-          <div className="video-list">
+          <div>
+            {/* Map over the fetched videos to render each video */}
             {videos.map(video => (
               <div key={video.id.videoId} className="video-item">
                 <h3>{video.snippet.title}</h3> {/* Video title */}
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                  title={video.snippet.title} // Title for accessibility
-                  allowFullScreen
-                  style={{ border: 0 }}
-                ></iframe>
-                <p>{truncateDescription(video.snippet.description)}</p> {/* Truncated description */}
+                <div className="video-wrapper">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.id.videoId}`} // Embed YouTube video player
+                    title={video.snippet.title} // Video title for accessibility
+                    allowFullScreen
+                    style={{ border: 0 }}
+                  ></iframe>
+                </div>
+                <p className="video-description">{truncateDescription(video.snippet.description)}</p> {/* Display truncated ()video description */}
               </div>
             ))}
           </div>
         ) : (
-          <p>No videos found.</p> // Message if no videos are found
+          <p className="text-center">No videos found.</p> // Show message if no videos match the search
         )}
       </div>
     </div>
   );
 }
-
+// Export Courses component for use in other parts of the app
 export default Courses; 

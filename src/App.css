@@ -1,12 +1,95 @@
-.container {
-    display: flex;
+/* Reset styling for universal selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Styling for overall body to set default font, background gradient, and text color */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #FFA500, #4169E1);
+  color: #2c3e50;
+  min-height: 100vh;
+}
+
+/* Main container that holds both the left and right sections, with flex layout */
+.app-container {
+  display: flex;
+  min-height: calc(100vh - 80px); /* Ensures that the container takes up the full viewport height minus 80 pixels, accounting for other fixed-height elements like headers or footers */
+  margin: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px #00000033;
+}
+
+/* Sidebar or left section of the layout */
 .left-container {
-    width: 20%;
-    
+  width: 20%;
+  background-color: #ffffff1a;
+  padding: 20px;
+  position: relative;
 }
 
+/* Right section where main content is displayed */
 .right-container {
-    width: 80%;
+  width: 80%;
+  background-color: white;
+  padding: 30px;
+  overflow-y: auto;
+}
+
+/* Header elements to add spacing and set color */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* Sets the font sizes for heading elements (h1 to h6) to create a visual hierarchy, making the most important titles (h1) the largest and decreasing in size for each subsequent heading */
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+
+/* Basic styling for buttons with hover transition effect */
+button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  background-color: #4169E1;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Changes the button background color to a darker blue (#3a5cc7) when hovered over, providing visual feedback to the user */
+button:hover {
+  background-color: #3a5cc7; 
+}
+
+/* Input and textarea fields styling with focus effect */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Changes the border color to blue (#4169E1) when the input or textarea is focused, indicating active selection */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #4169E1;
+}
+
+/* Main content area styling */
+.page-content { 
+  padding: 30px;
+  max-width: 100%;
+  margin: 0 auto;
 }

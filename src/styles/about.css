@@ -1,53 +1,122 @@
-@import '../App.css';
-
-.right-container {
-    display: flex; 
-    flex-direction: column; 
-}
-
-.flex-container {
-    display: flex; 
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
+/* Styles for a content box that contains various elements with padding and shadow */
 .content-box {
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: 60%; 
-    
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
+/* Title styles within the content box */
+.content-box h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Subtitle styles within the content box */
+.content-box h4 {
+  font-size: 20px;
+  color: #4a90e2;
+  margin-bottom: 15px;
+}
+
+/* Common styles for paragraphs within content boxes and contributor sections */
+.content-box p, .contributor p {
+  font-size: 16px;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* Additional margin for paragraphs specifically in the content box */
+.content-box p {
+  margin-bottom: 15px;
+}
+
+/* Container for displaying statistics, aligned horizontally */
 .stats-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 35%;
-    margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
 }
 
+/* Individual statistic box with padding, background color, and shadow */
 .stat-box {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-    margin-bottom: 10px;
+  flex: 1;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  text-align: center;
+  margin: 0 10px; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Title styles for statistic boxes */
+.stat-box h3 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Number styles within statistic boxes, emphasizing size and weight */
+.stat-box p {
+  font-size: 32px;
+  color: #4a90e2;
+  font-weight: 700;
+}
+
+/* Grid layout for displaying contributors, responsive to screen size */
 .contributors {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    background-color: #8e7c7c1a;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
 }
 
+/* Individual contributor card with center alignment and shadow */
 .contributor {
-    width: 30%;
-    margin: 10px;
-    text-align: center;
+  text-align: center;
+  padding: 25px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Styling for contributor images, making them circular and with a border */
 .contributor img {
-    width: 100px;
-    height: auto;
-    border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 4px solid #4a90e2;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contributor name styling */
+.contributor h5 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+/* Section for the team, centered text */
+.team-section {
+  text-align: center;
+}
+
+/* Styling for contributor bios, italicized for emphasis */
+.contributor-bio {
+  font-style: italic;
+  color: #2c3e50;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+/* Override styles for story paragraphs within content boxes for justification */
+.content-box .story-paragraph {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
 }

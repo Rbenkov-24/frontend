@@ -1,0 +1,102 @@
+/* Main container for the dashboard content with padding and scrollable overflow */
+.dashboard-content {
+  padding: 30px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Title styling for the dashboard, including font size and color */
+.dashboard-title {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+/* Grid layout for statistics section, displaying cards in three columns */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Styling for individual statistic cards, including background and shadow effects */
+.stat-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for statistic cards, enhancing shadow and lifting the card */
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Title styling within statistic cards, including font size and color */
+.stat-card h3 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* Number styling within statistic cards, emphasizing size and weight */
+.stat-card p {
+  font-size: 32px;
+  color: #4a90e2;
+  font-weight: 700;
+}
+
+/* Container for recent activity section, styled with padding and shadow */
+.recent-activity {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling for the recent activity section */
+.recent-activity h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Flex container for activity items, arranged vertically with spacing */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual activity item styling with padding and background */
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for activity items, moving them slightly and changing background */
+.activity-item:hover {
+  transform: translateX(5px);
+  background-color: #f0f2f5;
+}
+
+/* Text styling for activity descriptions */
+.activity-item p {
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+/* Time styling for activity items, using a lighter color */
+.activity-time {
+  color: #666;
+  font-size: 14px;
+}

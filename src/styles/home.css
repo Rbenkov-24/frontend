@@ -1,67 +1,21 @@
-/* Main container for the home content area */
-.home-content {
-  padding: 30px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-/* Styling for the main welcome title text */
-.welcome-title {
-  font-size: 36px;
-  color: #2c3e50;
-  margin-bottom: 15px;
-  text-align: center;
-  font-weight: 700;
-}
-
-/* Styling for the subtitle text under the welcome title */
-.welcome-subtitle {
-  font-size: 20px;
-  color: #666;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-/* Container for the hero image section with rounded corners and shadow */
+/* Styles for the hero image section, including layout and shadow */
 .hero-image {
   position: relative;
   margin-bottom: 70px;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 5px 15px #00000033;
 }
 
-/* Styles for the actual image within the hero-image container */
+/* Styling for the image within the hero section, ensuring it fits correctly */
 .hero-image img {
   width: 100%;
   max-height: 450px;
   object-fit: cover;
 }
 
-
-/* Styling for section titles, with a centered bottom line */
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 32px;
-  color: #2c3e50;
-  position: relative;
-}
-
-/* Decorative line under section-title, placed in the center */
-.section-title::after {
-  content: ''; 
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background-color: #4a90e2;
-}
-
-/* Grid layout for arranging multiple topic cards in a responsive format */
+/* Grid layout for organizing topic cards responsively */
 .topics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -69,36 +23,36 @@
   margin-bottom: 70px;
 }
 
-/* Individual card design for each topic in the grid */
+/* Individual topic card design, including background and layout */
 .topic-card {
-  background: white;
+  background: #ffffff; 
   padding: 25px;
   border-radius: 15px;
   box-shadow: 0 3px 10px #0000001a;
   transition: all 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-/* Hover effect for the topic cards, adding shadow and slight movement */
+/* Hover effects for topic cards, enhancing interactivity */
 .topic-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px #00000033;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #FFA500, #4169E1); /* Gradient background */
+  color: #ffffff; 
 }
 
-/* Title style within each topic card, highlighted with main accent color */
-.topic-card h3 {
-  color: #4a90e2;
-  margin-bottom: 10px;
-  font-size: 20px;
+/* Change text color on hover for topic cards */
+.topic-card:hover h3,
+.topic-card:hover p {
+  color: #ffffff; 
 }
 
-/* Paragraph text style within each topic card, with a subtle color */
-.topic-card p {
-  color: #666;
-  font-size: 16px;
-}
-
-/* Grid layout for displaying multiple review cards in a responsive format */
+/* Grid layout for organizing review cards */
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -106,51 +60,41 @@
   margin-top: 40px;
 }
 
-/* Styling for each individual review card, including padding and shadow */
+/* Styling for each individual review card */
 .review-card {
-  background: white;
+  background: #ffffff; 
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 15px;
   box-shadow: 0 4px 12px #00000033;
   text-align: center;
   transition: transform 0.3s ease;
 }
 
-/* Hover effect for review cards, with a slight upward movement */
+/* Hover effect for review cards, adding slight movement */
 .review-card:hover {
   transform: translateY(-5px);
 }
 
-/* Text styling for the main review content, displayed in italics */
-.review-text {
-  font-style: italic;
-  color: #555;
-  margin-bottom: 25px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* Profile image styling for reviewers, with circular shape and border */
+/* Profile image styling for reviewers, ensuring circular appearance */
 .reviewer-img {
   width: 90px;
   height: 90px;
-  border-radius: 50%;
+  border-radius: 50%; 
   margin: 0 auto 20px;
   object-fit: cover;
-  border: 4px solid #4a90e2;
+  border: 4px solid; 
+  border-image: linear-gradient(135deg, #FFA500, #4169E1) 1; /* Gradient border */
   box-shadow: 0 4px 8px #00000033;
 }
 
-/* Styling for the reviewer's name, bold and main text color */
-.reviewer-name {
-  color: #2c3e50;
-  margin-bottom: 8px;
-  font-size: 20px;
-  font-weight: 600;
+/* Styling for welcome title text */
+.welcome-title {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-/* Styling for the reviewer's role or position in a muted color */
-.reviewer-role {
-  color: #666;
-  font-size: 16px;
+/* Styling for welcome subtitle text */
+.welcome-subtitle {
+  text-align: center;
+  margin-bottom: 50px;
 }

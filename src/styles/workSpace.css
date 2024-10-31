@@ -1,0 +1,222 @@
+/* User Management Section: Main container for user management functionality, enabling vertical scrolling */
+.user-management {
+  padding: 30px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Header styling for the User Management section */
+.user-management h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+/* Section for adding a new student, with background color and box shadow for emphasis */
+.add-student-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px #0000001a;
+  margin-bottom: 40px;
+}
+
+/* Header styling for the Add Student section */
+.add-student-section h3 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Form layout for adding a student, using a grid for two-column format */
+.add-student-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates a grid layout with two equal columns, allowing for flexible resizing of the columns based on available space */
+  gap: 20px;
+}
+
+/* Input fields styling within the Add Student form */
+.add-student-form input {
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Input focus effect for Add Student form */
+.add-student-form input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+/* Button styling for submission within the Add Student form */
+.add-student-form button {
+  grid-column: span 2; /* Button spans across two columns */
+  padding: 15px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect within the Add Student form */
+.add-student-form button:hover {
+  background-color: #357abd;
+}
+
+/* Section for displaying the list of students with box shadow and padding */
+.students-list-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px #0000001a;
+}
+
+/* Table styling for displaying student data */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Removes space between table cells */
+}
+
+/* Styling for table headers and data cells */
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  color: #2c3e50;
+}
+
+/* Header styling for table */
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Row hover effect for table */
+tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Modal overlay for displaying modals */
+.modal-overlay {
+  position: fixed; /* Fixes overlay to viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #00000080; 
+  display: flex; /* Flexbox for centering modal */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensures modal appears above other content */
+}
+
+/* Modal content styling */
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px #00000033;
+  width: 90%; 
+  max-width: 500px; /* Maximum width for modal */
+}
+
+/* Header styling for modal */
+.modal-content h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* Form layout for editing student details, using flexbox */
+.edit-student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Input fields styling within the Edit Student form */
+.edit-student-form input {
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Input focus effect for Edit Student form */
+.edit-student-form input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+/* Button styling for submission within the Edit Student form and modal */
+.edit-student-form button,
+.modal-content button {
+  padding: 15px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Specific button styling within modal */
+.modal-content button:last-child {
+  background-color: #6c757d; /* Secondary button color */
+  margin-top: 15px;
+}
+
+/* Button hover effects for Edit Student form and modal */
+.edit-student-form button:hover,
+.modal-content button:hover {
+  background-color: #357abd;
+}
+
+/* Button hover effect for last child in modal */
+.modal-content button:last-child:hover {
+  background-color: #5a6268;
+}
+
+/* Action buttons within table cells */
+td button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Styling for the first button in table cell (editing) */
+td button:first-child {
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* Styling for the last button in table cell (deleting) */
+td button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Button hover effect for action buttons in table */
+td button:hover {
+   background-color: #357abd;
+}
+
+/* Button hover effect for the last action button in table */
+td button:last-child:hover {
+  background-color: #c82333;
+}
